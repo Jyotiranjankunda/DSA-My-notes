@@ -1,3 +1,5 @@
+// Problem link : https://leetcode.com/problems/binary-tree-postorder-traversal/
+
 /*
 Binary Tree Postorder Traversal - Easy
 
@@ -37,6 +39,8 @@ public:
     vector<int> ans;
 
     // RECURSIVE SOLUTION
+    // Time: O(n), Space: O(n)
+
     vector<int> postorderTraversal(TreeNode* root) {
         if(root == NULL){
             return ans;
@@ -48,7 +52,9 @@ public:
     }
 
     // ITERATIVE SOLUTION - USING 2 STACKS
-    vector<int> postorderTraversal(TreeNode* root) {
+    // Time: O(n), Space: O(2n)
+
+    vector<int> postorderTraversal_2Stack(TreeNode* root) {
         if(root == NULL){
             return ans;
         }
@@ -75,4 +81,43 @@ public:
     }
 
     // ITERATIVE SOLUTION - USING 1 STACK
+    // Time: O(n), Space: O(n)
+
+    vector<int> postorderTraversal_1Stack(TreeNode* root){
+        vector<int> post;
+
+        if(root == NULL){
+            return post;
+        }
+
+        stack<TreeNode*> st;
+        TreeNode* node = NULL;
+        node = root;
+
+        while(!st.empty() || node != NULL){
+            if(node != NULL){
+                st.push(node);
+                node = node->left;
+            }
+            else{
+                TreeNode* temp = st.top()->right;
+                if(temp == NULL){
+                    temp = st.top();
+                    st.pop();
+                    post.push_back(temp->val);
+
+                    while(!st.empty() && temp == st.top()->right){
+                        temp = st.top();
+                        st.pop();
+                        post.push_back(temp->val);
+                    }
+                }
+                else{
+                    node = temp;
+                }
+            }
+        }
+
+        return post;
+    }
 };

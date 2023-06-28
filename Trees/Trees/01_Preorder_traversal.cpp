@@ -1,3 +1,5 @@
+// Problem link : https://leetcode.com/problems/binary-tree-preorder-traversal/
+
 /*
 Binary Tree Preorder Traversal - Easy
 
@@ -37,6 +39,8 @@ public:
     vector<int> ans;
     
     // RECURSIVE SOLUTION
+    // Time: O(n), Space: O(n)
+
     vector<int> preorderTraversal_recursive(TreeNode* root) {
         if(root == NULL){
             return ans;
@@ -48,6 +52,8 @@ public:
     }
 
     // ITERATIVE SOLUTION
+    // Time: O(n), Space: O(n)
+
     vector<int> preorderTraversal_iterative(TreeNode* root){
         if(root == NULL){
             return ans;

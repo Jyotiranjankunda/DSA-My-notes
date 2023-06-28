@@ -1,3 +1,5 @@
+// Problem link : https://leetcode.com/problems/binary-tree-inorder-traversal/
+
 /*
 Binary Tree Inorder Traversal - Easy
 
@@ -35,6 +37,10 @@ struct TreeNode {
 class Solution {
 public:
     vector<int> ans;
+
+    // RECURSIVE SOLUTION
+    // Time: O(n), Space: O(n)
+
     vector<int> inorderTraversal_recursive(TreeNode* root) {
         if(root == NULL){
             return ans;
@@ -46,6 +52,8 @@ public:
     }
 
     // ITERATIVE SOLUTION
+    // Time: O(n), Space: O(n)
+
     vector<int> inorderTraversal_iterative(TreeNode* root){
         vector<int> inorder;
         stack<TreeNode*> st;

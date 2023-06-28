@@ -34,5 +34,7 @@ In addition to the concept notes, this repository also provides a collection of 
 
 The questions are accompanied by detailed explanations and code solutions, helping you understand the thought process behind solving each problem. Whether you prefer implementing the solutions in your favorite programming language or analyzing the logic behind them, these questions will serve as valuable practice material.
 
+You will get the detailed explanation of codes in my hand written notes. I have also given the problem link along with every question. 
+
 
 Happy learning and happy coding!
